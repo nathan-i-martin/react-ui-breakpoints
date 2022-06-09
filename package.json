@@ -1,7 +1,12 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-ui-breakpoints",
+  "version": "0.0.1",
+  "description": "Easily add media breakpoints to your react project",
+  "private": false,
+  "author": "Nathan Martin",
+  "license": "MIT",
+  "repository": "https://github.com/nmartin42/react-ui-breakpoints.git",
+  "main": "dist/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -16,10 +21,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "rollup -c",
+    "start": "rollup -c -w"
   },
   "eslintConfig": {
     "extends": [

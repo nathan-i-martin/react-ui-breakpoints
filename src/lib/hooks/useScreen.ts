@@ -1,4 +1,3 @@
-import { useMediaQuery } from "react-responsive";
 import { BreakpointMapping } from "../resources/BreakpointMapping";
 
 /**
