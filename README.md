@@ -36,7 +36,7 @@ const ExampleComponent = () => {
     );
 }
 ```
-The component above is what we like to call a *dynamic component*. Instead of directly returning JSX (or returning a render() method which returns JSX.) We hold multiple *view components* and then dynamically return then as the breakpoints are met!
+The component above is what we like to call a *dynamic component*. Instead of directly returning JSX (or returning a render() method which returns JSX.) We hold multiple *views* and then dynamically return then as the breakpoints are met!
 
 Let's also review a version which has state:
 ```typescript
@@ -63,6 +63,6 @@ const ExampleComponent = () => {
 }
 ```
 
-As you can see, we don't save state inside of the *view components*, instead we hold state in the parent component and then reference that state inside of our view components!
+As you can see, we don't save state inside of the views, instead we hold state in the parent component and then reference that state inside of our views!
 
 [1]: https://reactjs.org/docs/hooks-reference.html
