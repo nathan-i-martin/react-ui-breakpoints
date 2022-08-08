@@ -43,7 +43,7 @@ Let's also review a version which has state:
 const ExampleComponent = () => {
     const [ something, setSomething ]: [ string, Function ] = useState('');
 
-    useState(() => setSomething('Hello world!'),[]);
+    useEffect(() => setSomething('Hello world!'),[]);
 
     const DefaultView = () => (
         <div className='text-left text-neutral-100 text-6xl'>
