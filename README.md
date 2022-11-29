@@ -66,6 +66,6 @@ const ExampleComponent = () => {
 As you can see, we don't save state inside of the views, instead we hold state in the parent component and then reference that state inside of our views!
 
 ## Special Notes
-It's worth mentioning that useScreenBreakpoint uperates using the `(max-width: n)` media query. If anyone needs a `(min-width: n)` implementation, just open an issue, let me know, and I can add it for you. Otherwise I will add it when I have a chance to get around to it (I haven't needed that for any of my own projects so I didn't bother adding it)
+It's worth mentioning that useScreenBreakpoint uperates using the `(max-width: n)` media query. I.e. **it uses desktop first** this is something I plan to update so that it uses mobile first. I just haven't gotten aroudn to doing that yet.
 
 [1]: https://reactjs.org/docs/hooks-reference.html
