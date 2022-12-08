@@ -1,3 +1,4 @@
+[![npm](https://badgen.net/npm/v/react-ui-breakpoints)
 # react-ui-breakpoints
 Easily add media breakpoints to your react components with the useScreen hook!
 
