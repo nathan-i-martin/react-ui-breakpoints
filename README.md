@@ -1,4 +1,4 @@
-# react-ui-breakpoints ![npm](https://badgen.net/npm/v/react-ui-breakpoints)
+# react-ui-breakpoints (RUB) ![npm](https://badgen.net/npm/v/react-ui-breakpoints)
 Easily add media breakpoints to your react components with the useScreen hook!
 
 ## Installation
@@ -10,16 +10,14 @@ npm i react-ui-breakpoints
 React is a powerful, component-based, tool that streamlines the process of developing clean readable website code! And through the use of [React Hooks][1], developers can easily add and create additional functionalities which aren't already in React! React UI Breakpoints (RUB) is one of these functionalities! It allows a clean and simple system for managing media breakpoints in your React project, allowing you to deliver readable, well-organized code which dynamically changes as users resize various aspects of a website.
 
 ## Getting Started
-To get started, install react-ui-breakpoints in your project.
+To get started, install RUB in your project.
 
 ```
 npm i react-ui-breakpoints
 ```
 
-react-ui-breakpoints contains two hooks you can use to build screen breakpoints; `useScreen` and `useView`. Attach them to the return of a component to make it dynamic!
-You can also define if you want your breakpoints to operate in Desktop first or Mobile first mode using the QueryMode enum!
-
-By setting 
+RUB contains two hooks you can use to build screen breakpoints; `useScreen` and `useView`. Attach them to the return of a component to make it dynamic!
+You can also define if you want your breakpoints to operate in Desktop first or Mobile first mode using the QueryMode enum! (Hint: Modern website development should always use Mobile first.)
 ```tsx
 const ExampleComponent = () => {
     const MobileView = () => (
@@ -46,7 +44,7 @@ const ExampleComponent = () => {
     );
 }
 ```
-The component above is what we like to call a *dynamic component*. Instead of directly returning JSX. We hold multiple *view components* and then dynamically return them as the breakpoints are met!
+The component above is what we call a *dynamic component*. Instead of directly returning JSX, we hold multiple *views* and then return them as the breakpoints are met!
 
 Let's also review a version that has state:
 ```tsx
@@ -79,8 +77,11 @@ const ExampleComponent = () => {
     );
 }
 ```
+As you can see, we don't save state inside of the *views*, instead, we hold state in the parent component and then reference that state inside of our views!
 
-react-ui-breakpoints will only ever update when the component itself updates. If you want the components to update automatically on screen-resizing. You can attach the `useHookOntoScreen` React hook!
+### Auto-resizing
+
+RUB will only ever update when the component itself updates. If you want the components to update automatically on screen-resizing. You can attach the `useHookOntoScreen` React hook!
 This hook will cause your component to re-render anytime the viewport is resized.
 If you already have viewport specific state in your component. Adding this hook is unnecessary.
 ```tsx
@@ -112,7 +113,9 @@ const ExampleComponent = () => {
 }
 ```
 
-
-As you can see, we don't save state inside of the *view components*, instead, we hold state in the parent component and then reference that state inside of our view components!
+## Disclaimer
+It can be easy to misuse the features that RUB gives you.
+Making hundreds of breakpoints instead of properly designing your webpage for resizing is not suggested.
+RUB Breakpoints should only be considered when you have major page elements that you want to add or remove between different viewports.
 
 [1]: https://reactjs.org/docs/hooks-reference.html
