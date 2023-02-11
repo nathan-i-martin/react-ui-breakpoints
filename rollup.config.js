@@ -14,5 +14,5 @@ export default {
     plugins: [
         typescript()
     ],
-    external: ['react-responsive'],
+    external: ['react'],
 }
