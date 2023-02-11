@@ -1,4 +1,4 @@
-# react-ui-breakpoints
+# react-ui-breakpoints ![npm](https://badgen.net/npm/v/react-ui-breakpoints)
 Easily add media breakpoints to your react components with the useScreen hook!
 
 ## Installation
@@ -47,7 +47,7 @@ Let's also review a version which has state:
 const ExampleComponent = () => {
     const [ something, setSomething ]: [ string, Function ] = useState('');
 
-    useState(() => setSomething('Hello world!'),[]);
+    useEffect(() => setSomething('Hello world!'),[]);
 
     const DefaultView = () => (
         <div className='text-left text-neutral-100 text-6xl'>
@@ -69,6 +69,5 @@ const ExampleComponent = () => {
 ```
 
 As you can see, we don't save state inside of the *view components*, instead we hold state in the parent component and then reference that state inside of our view components!
-Implementing react-ui-breakpoints is super easy because it only attached to your final return statement and more or less stays out of the way of the rest of your component.
 
 [1]: https://reactjs.org/docs/hooks-reference.html
