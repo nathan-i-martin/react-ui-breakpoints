@@ -3,20 +3,23 @@ Easily add media breakpoints to your react components with the useScreen hook!
 
 ## Installation
 ```
-npm install react-ui-breakpoints
+npm i react-ui-breakpoints
 ```
 
 ## Introduction
-React is a powerful, component based, tool that streamlines the process for developing clean readable website code! And through the use of [React Hooks][1], developers can easily add and create additional functionalities which aren't already in React! React UI Breakpoints (RUB) is one of these functionalities! It allows a clean as simple system for managing media breakpoints in your React project, allowing you to deliver readable, well-organized code which dynamically changes as users resize various aspects of a website.
+React is a powerful, component-based, tool that streamlines the process of developing clean readable website code! And through the use of [React Hooks][1], developers can easily add and create additional functionalities which aren't already in React! React UI Breakpoints (RUB) is one of these functionalities! It allows a clean and simple system for managing media breakpoints in your React project, allowing you to deliver readable, well-organized code which dynamically changes as users resize various aspects of a website.
 
 ## Getting Started
-To get started, install RUB in your project.
+To get started, install react-ui-breakpoints in your project.
 
 ```
-npm install react-ui-breakpoints
+npm i react-ui-breakpoints
 ```
 
-RUB contains two hooks you can use to build screen breakpoints; `useScreen` and `useScreenBreakpoint`. Attach them to the return of a component to make it dynamic!
+react-ui-breakpoints contains two hooks you can use to build screen breakpoints; `useScreen` and `useView`. Attach them to the return of a component to make it dynamic!
+You can also define if you want your breakpoints to operate in Desktop first or Mobile first mode using the QueryMode enum!
+
+By setting 
 ```typescript
 const ExampleComponent = () => {
     const DefaultView = () => (
@@ -31,14 +34,15 @@ const ExampleComponent = () => {
     );
 
     return useScreen(
-        DefaultView(),
-        useScreenBreakpoint('480px',MobileView());
+        QueryMode.MOBILE_FIRST,
+        useView('480px', MobileView());
+        useView(true, DefaultView());
     );
 }
 ```
-The component above is what we like to call a *dynamic component*. Instead of directly returning JSX (or returning a render() method which returns JSX.) We hold multiple *views* and then dynamically return then as the breakpoints are met!
+The component above is what we like to call a *dynamic component*. Instead of directly returning JSX. We hold multiple *view components* and then dynamically return them as the breakpoints are met!
 
-Let's also review a version which has state:
+Let's also review a version that has state:
 ```typescript
 const ExampleComponent = () => {
     const [ something, setSomething ]: [ string, Function ] = useState('');
@@ -57,15 +61,13 @@ const ExampleComponent = () => {
     );
 
     return useScreen(
-        DefaultView(),
-        useScreenBreakpoint('480px',MobileView());
+        QueryMode.MOBILE_FIRST,
+        useView('480px', MobileView());
+        useView(true, DefaultView());
     );
 }
 ```
 
-As you can see, we don't save state inside of the views, instead we hold state in the parent component and then reference that state inside of our views!
-
-## Special Notes
-It's worth mentioning that useScreenBreakpoint uperates using the `(max-width: n)` media query. I.e. **it uses desktop first** this is something I plan to update so that it uses mobile first. I just haven't gotten aroudn to doing that yet.
+As you can see, we don't save state inside of the *view components*, instead, we hold state in the parent component and then reference that state inside of our view components!
 
 [1]: https://reactjs.org/docs/hooks-reference.html

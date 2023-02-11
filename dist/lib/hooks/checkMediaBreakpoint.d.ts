@@ -5,4 +5,4 @@ import { QueryMode } from '../resources/QueryMode.js';
  * @param mode The QueryMode to use when searching. Defaults to min-width.
  * @returns A boolean. `true` if the current screen width matches the query. `false` if the current screen width does not match the query.
  */
-export declare const useMediaBreakpoint: (query: string, mode?: QueryMode) => boolean;
+export declare const checkMediaBreakpoint: (query: string, mode?: QueryMode) => boolean;
