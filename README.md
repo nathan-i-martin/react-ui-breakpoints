@@ -20,7 +20,7 @@ react-ui-breakpoints contains two hooks you can use to build screen breakpoints;
 You can also define if you want your breakpoints to operate in Desktop first or Mobile first mode using the QueryMode enum!
 
 By setting 
-```jsx
+```tsx
 const ExampleComponent = () => {
     const MobileView = () => (
         <div className='text-left text-neutral-100 text-6xl'>
@@ -49,7 +49,7 @@ const ExampleComponent = () => {
 The component above is what we like to call a *dynamic component*. Instead of directly returning JSX. We hold multiple *view components* and then dynamically return them as the breakpoints are met!
 
 Let's also review a version that has state:
-```jsx
+```tsx
 const ExampleComponent = () => {
     const [ something, setSomething ]: [ string, Function ] = useState('');
 
@@ -83,7 +83,7 @@ const ExampleComponent = () => {
 react-ui-breakpoints will only ever update when the component itself updates. If you want the components to update automatically on screen-resizing. You can attach the `useHookOntoScreen` React hook!
 This hook will cause your component to re-render anytime the viewport is resized.
 If you already have viewport specific state in your component. Adding this hook is unnecessary.
-```jsx
+```tsx
 const ExampleComponent = () => {
     const autoResize = useHookOntoScreen();
 
