@@ -1,20 +1,18 @@
-import typescript from 'rollup-plugin-typescript2'
-
-import packageConfig from './package.json'
+import typescript from '@rollup/plugin-typescript';
 
 export default {
     input: 'src/index.ts',
     output: [
         {
-            file: packageConfig.main,
-            format: 'cjs',
+            file: "dist/index.js",
+            format: 'es',
             exports: 'named',
             sourcemap: true,
-            strict: false
+            strict: false,
         }
     ],
     plugins: [
         typescript()
     ],
-  external: ['react', 'react-dom']
+    external: ['react-responsive'],
 }

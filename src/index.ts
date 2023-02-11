@@ -1,17 +1,10 @@
-import { useScreen } from "./lib/hooks/useScreen";
-import { useScreenBreakpoint } from "./lib/hooks/useScreenBreakpoint";
-import { useElementBreakpoint } from "./lib/hooks/useElementBreakpoint";
-
-import { useMediaBreakpoint } from "./lib/hooks/useMediaBreakpoint";
-
-import { BreakpointMapping } from "./lib/resources/BreakpointMapping";
+import { useScreen } from "./lib/hooks/useScreen.js";
+import { useView } from './lib/hooks/useView.js';
+import { QueryMode } from './lib/resources/QueryMode.js';
 
 export {
     useScreen,
-    useScreenBreakpoint,
-    useElementBreakpoint,
+    useView,
 
-    useMediaBreakpoint,
-
-    BreakpointMapping
+    QueryMode
 };

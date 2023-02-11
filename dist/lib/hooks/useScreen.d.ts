@@ -1,9 +1,25 @@
 /// <reference types="react" />
-import { BreakpointMapping } from "../resources/BreakpointMapping";
+import { BreakpointView } from "../resources/Breakpoint.js";
+import { QueryMode } from "../resources/QueryMode.js";
 /**
  * Returns a JSX Element based on the current screen size.
- * @param defaultMapping JSX Element to return is no matches are made.
- * @param mappings Array of screen mappings to compare against. Mappings are compared in order they are provided.
+ * This function loops, in order from top to bottom, through all of the views that were provided and returns whichever one matches the query first.
+ * If a view has it's breakpoint set to `true`, that view will always be returned once it's reached in the loop.
+ *
+ * You can set a default view, if all other breakpoints don't match the viewport, by setting a `useView(true, JSX.Element)` view at the end of the list.
+ *
+ * # Usage
+ * ```
+ * return useScreen(
+ *      useView("100px", JSX.Element),
+ *      useView("500px", JSX.Element),
+ *      useView("1000px", JSX.Element),
+ *      useView(true, JSX.Element), // This view will be returned if any of the others don't
+ * );
+ * ```
+ * @param mode The QueryMode to use when deciding which view to show.
+ * @param mappings Array of view mappings to compare against. Mappings are compared in the order they are provided.
  * @returns A JSX Element.
+ * @throws NoViewFoundError If no views were matched.
  */
-export declare const useScreen: (defaultMapping: JSX.Element, ...mappings: BreakpointMapping[]) => JSX.Element;
+export declare const useScreen: (mode?: QueryMode, ...mappings: BreakpointView[]) => JSX.Element;
