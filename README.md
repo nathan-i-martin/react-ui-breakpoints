@@ -7,7 +7,7 @@ npm i react-ui-breakpoints
 ```
 
 ## Introduction
-React is a powerful, component based, tool that streamlines the process for developing clean readable website code! And through the use of [React Hooks][1], developers can easily add and create additional functionalities which aren't already in React! React UI Breakpoints (RUB) is one of these functionalities! It allows a clean as simple system for managing media breakpoints in your React project, allowing you to deliver readable, well-organized code which dynamically changes as users resize various aspects of a website.
+React is a powerful, component-based, tool that streamlines the process of developing clean readable website code! And through the use of [React Hooks][1], developers can easily add and create additional functionalities which aren't already in React! React UI Breakpoints (RUB) is one of these functionalities! It allows a clean and simple system for managing media breakpoints in your React project, allowing you to deliver readable, well-organized code which dynamically changes as users resize various aspects of a website.
 
 ## Getting Started
 To get started, install react-ui-breakpoints in your project.
@@ -42,7 +42,7 @@ const ExampleComponent = () => {
 ```
 The component above is what we like to call a *dynamic component*. Instead of directly returning JSX. We hold multiple *view components* and then dynamically return them as the breakpoints are met!
 
-Let's also review a version which has state:
+Let's also review a version that has state:
 ```typescript
 const ExampleComponent = () => {
     const [ something, setSomething ]: [ string, Function ] = useState('');
@@ -68,6 +68,6 @@ const ExampleComponent = () => {
 }
 ```
 
-As you can see, we don't save state inside of the *view components*, instead we hold state in the parent component and then reference that state inside of our view components!
+As you can see, we don't save state inside of the *view components*, instead, we hold state in the parent component and then reference that state inside of our view components!
 
 [1]: https://reactjs.org/docs/hooks-reference.html

@@ -13,10 +13,11 @@ import { useMediaBreakpoint } from "./useMediaBreakpoint.js";
  * # Usage
  * ```
  * return useScreen(
+ *      QueryMode.MOBILE_FIRST
  *      useView("100px", JSX.Element),
  *      useView("500px", JSX.Element),
  *      useView("1000px", JSX.Element),
- *      useView(true, JSX.Element), // This view will be returned if any of the others don't
+ *      useView(true, JSX.Element), // This view will be returned if any of the others aren't
  * );
  * ```
  * @param mode The QueryMode to use when deciding which view to show.
