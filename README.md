@@ -1,4 +1,4 @@
-# react-ui-breakpoints
+# react-ui-breakpoints ![npm](https://badgen.net/npm/v/react-ui-breakpoints)
 Easily add media breakpoints to your react components with the useScreen hook!
 
 ## Installation
@@ -36,14 +36,14 @@ const ExampleComponent = () => {
     );
 }
 ```
-The component above is what we like to call a *dynamic component*. Instead of directly returning JSX (or returning a render() method which returns JSX.) We hold multiple *view components* and then dynamically return then as the breakpoints are met!
+The component above is what we like to call a *dynamic component*. Instead of directly returning JSX (or returning a render() method which returns JSX.) We hold multiple *views* and then dynamically return then as the breakpoints are met!
 
 Let's also review a version which has state:
 ```typescript
 const ExampleComponent = () => {
     const [ something, setSomething ]: [ string, Function ] = useState('');
 
-    useState(() => setSomething('Hello world!'),[]);
+    useEffect(() => setSomething('Hello world!'),[]);
 
     const DefaultView = () => (
         <div className='text-left text-neutral-100 text-6xl'>
@@ -63,6 +63,9 @@ const ExampleComponent = () => {
 }
 ```
 
-As you can see, we don't save state inside of the *view components*, instead we hold state in the parent component and then reference that state inside of our view components!
+As you can see, we don't save state inside of the views, instead we hold state in the parent component and then reference that state inside of our views!
+
+## Special Notes
+It's worth mentioning that useScreenBreakpoint uperates using the `(max-width: n)` media query. I.e. **it uses desktop first** this is something I plan to update so that it uses mobile first. I just haven't gotten aroudn to doing that yet.
 
 [1]: https://reactjs.org/docs/hooks-reference.html
