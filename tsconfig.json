@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "outDir": "dist",
-      "module": "esnext",
+      "module": "nodenext",
       "target": "esnext",
       "sourceMap": true,
       "allowJs": false,
